@@ -1,12 +1,23 @@
-class Player:
-    def __init__(self, name):
-        self.name = name
-        self.hp = 20
-        self.gold = 0
-        self.inventory = []
+from dataclasses import dataclass, field
+from typing import List
 
+@dataclass
+class Item:
+    name: str
+    effect: str 
+
+@dataclass
+class Player:
+    name: str
+    max_hp: int = 20
+    hp: int = 20
+    gold: int = 0
+    inventory: List[Item] = field(default_factory=list)
+    saw_shadow: bool = False
+    has_master_key: bool = False
+
+@dataclass
 class Enemy:
-    def __init__(self, name, hp, damage):
-        self.name = name
-        self.hp = hp
-        self.damage = damage
+    name: str
+    hp: int
+    damage: int
