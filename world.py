@@ -1,19 +1,17 @@
+import random
+
 class Room:
-    def __init__(self, description, enemy=None, item=None):
+    def __init__(self, name, description, exits):
+        self.name = name
         self.description = description
-        self.enemy = enemy
-        self.item = item
+        self.exits = exits  
 
-world_map = {
-    "entrance": Room("You stand at the dungeon entrance."),
-    "hall": Room("A dark hallway with dripping water."),
-    "treasure": Room("A room glittering with treasure."),
-    "boss": Room("A large ominous chamber... the boss awaits."),
-}
-
-connections = {
-    "entrance": ["hall"],
-    "hall": ["entrance", "treasure", "boss"],
-    "treasure": ["hall"],
-    "boss": ["hall"],
-}
+def generate_world():
+    rooms = [
+        Room("Dungeon Cell", "A cold, damp cell with rusty bars.", {"north": 1}),
+        Room("Hallway", "A narrow hallway lit by flickering torches.", {"south": 0, "east": 2}),
+        Room("Armory", "Old weapons line the walls, most are broken.", {"west": 1, "north": 3}),
+        Room("Treasure Room", "Glittering gold is piled high!", {"south": 2, "east": 4}),
+        Room("Exit Gate", "A heavy iron gate leading to freedom!", {"west": 3}),
+    ]
+    return rooms

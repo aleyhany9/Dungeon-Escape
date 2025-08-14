@@ -3,8 +3,8 @@ class Item:
         self.name = name
         self.effect = effect
 
-items_library = [
-    Item("Health Potion", "+20 HP"),
-    Item("Sword", "+5 Attack"),
-    Item("Shield", "-5 Damage Taken"),
-]
+def get_starting_items():
+    return [
+        Item("Healing Potion", "+5 HP"),
+        Item("Dagger", "+2 attack")
+    ]

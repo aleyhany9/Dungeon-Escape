@@ -1,12 +1,12 @@
 class Player:
     def __init__(self, name):
         self.name = name
-        self.hp = 100
-        self.attack = 10
+        self.hp = 20
+        self.gold = 0
         self.inventory = []
 
 class Enemy:
-    def __init__(self, name, hp, attack):
+    def __init__(self, name, hp, damage):
         self.name = name
         self.hp = hp
-        self.attack = attack
+        self.damage = damage
