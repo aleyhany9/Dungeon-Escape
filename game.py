@@ -88,4 +88,7 @@ def main():
         message("Unknown command. Type 'help' for options.", "yellow")
 
 if __name__ == "__main__":
-    main()     
+    try:
+        main()
+    except KeyboardInterrupt:
+        print("\nyou just exit the game")
